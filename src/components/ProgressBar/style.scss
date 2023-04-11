@@ -1,4 +1,5 @@
 @import "../../utils/variables.scss";
+
 .progress-bar {
   display: block;
   min-width: 160px;
@@ -22,6 +23,6 @@
   fill: $typoPrimary;
 }
 
-.progress-bar-secondary-text{
+.progress-bar-secondary-text {
   fill: $typoSecondary;
 }

@@ -5,6 +5,7 @@ import RingIcon from '../../static/icons/IconRing.svg';
 import SunIcon from '../../static/icons/IconSun.svg';
 import Avatar from '../../static/icons/Avatar.svg'
 import {NavLink} from "react-router-dom";
+
 const Header = () => {
     return (
         <React.Fragment>
@@ -27,7 +28,7 @@ const Header = () => {
                 </div>
             </header>
         </React.Fragment>
-)
+    )
 };
 
 export default Header;

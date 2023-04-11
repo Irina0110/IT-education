@@ -6,7 +6,7 @@ import Education from "../components/Education";
 const AppRouter = () => {
     return (
         <Routes>
-            <Route path={routes.education} element={<Education/>} />
+            <Route path={routes.education} element={<Education/>}/>
         </Routes>
     );
 };

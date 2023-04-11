@@ -1,6 +1,7 @@
 import React from "react";
 import './style.scss';
 import ProgressBar from "../ProgressBar";
+
 const Education = () => {
     return (
         <React.Fragment>
@@ -17,16 +18,15 @@ const Education = () => {
                                     <li>Для новичка</li>
                                     <li>Основы работы</li>
                                 </ul>
-                                <p className='fontM'>Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете</p>
+                                <p className='fontM'>Познакомьтесь ближе с компанией и узнайте больше о том, что вы
+                                    делаете</p>
                                 <div className='button_continue fontButton'>
                                     Продолжить тему
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </React.Fragment>
     )

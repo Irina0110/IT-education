@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import './style.scss';
 
 interface ProgressBarProps {
@@ -56,7 +56,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
                 dominantBaseline="middle"
             >
                 {progress}/{totalTasks}
-                <tspan dy='1.2em' x="50%" dominantBaseline="middle" className='progress-bar-secondary-text fontS'>заданий</tspan>
+                <tspan dy='1.2em' x="50%" dominantBaseline="middle"
+                       className='progress-bar-secondary-text fontS'>заданий
+                </tspan>
             </text>
         </svg>
     );
