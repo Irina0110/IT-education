@@ -1,0 +1,27 @@
+@import "../../utils/variables.scss";
+.progress-bar {
+  display: block;
+  min-width: 160px;
+}
+
+.progress-bar-bg {
+  fill: none;
+  stroke: $bgGhost;
+}
+
+.progress-bar-fg {
+  fill: none;
+  stroke: $bgSuccess;
+  stroke-linecap: butt;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.progress-bar-text {
+  fill: $typoPrimary;
+}
+
+.progress-bar-secondary-text{
+  fill: $typoSecondary;
+}
