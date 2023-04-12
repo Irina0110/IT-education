@@ -1,8 +1,9 @@
-@import "../../utils/variables.scss";
+@import "../../../../utils/variables";
 
 .progress-bar {
   display: block;
   min-width: 160px;
+  margin-top: 10px;
 }
 
 .progress-bar-bg {
