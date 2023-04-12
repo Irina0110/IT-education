@@ -1,25 +1,24 @@
-import { useEffect, useState } from "react";
-import { fetchTasks } from "../../../../api";
-import { Theme } from "../../../../api/themes";
+import {Theme} from "../../../../api/themes";
+import './style.scss'
+interface ThemeCardProps {
+    theme: Theme;
+    key?: number;
+}
 
-function ThemeList() {
-    const [Themes, setThemes] = useState<Theme[]>([]);
+function ThemeCard({theme, key}: ThemeCardProps) {
+    const categories = theme.category.split(", ");
 
-    useEffect(() => {
-        fetchTasks().then((data) => {
-            setThemes(data);
-        });
-    }, []);
-
-    // Рендеринг списка задач
     return (
-        <div>
-            {Themes.map((Theme) => (
-                <div className='theme__card'>
-                    <p>{Theme.title}</p>
-                </div>
-            ))}
+        <div className='theme__card' key={key}>
+            <h4 className='font2XL'>{theme.title}</h4>
+            <ul className='fontS'>
+                {categories.map((category) => (
+                    <li key={category}>{category}</li>
+                ))}
+            </ul>
+            <p>{theme.description}</p>
         </div>
     );
 }
-export default ThemeList;
+
+export default ThemeCard;

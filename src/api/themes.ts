@@ -4,7 +4,7 @@ export interface Theme {
     description: string;
     completedCount: number;
     totalCount: number;
-    status: boolean;
+    status: string;
 }
 
 export const Themes: Theme[] = [
@@ -14,7 +14,7 @@ export const Themes: Theme[] = [
         description: "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
         completedCount: 10,
         totalCount: 10,
-        status: true,
+        status: "done",
     },
     {
         title: "Начало работы",
@@ -22,7 +22,7 @@ export const Themes: Theme[] = [
         description: "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
         completedCount: 8,
         totalCount: 10,
-        status: false,
+        status: "continue",
     },
     {
         title: "Введение в рабочую среду",
@@ -30,7 +30,7 @@ export const Themes: Theme[] = [
         description: "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
         completedCount: 0,
         totalCount: 10,
-        status: false,
+        status: "begin",
     },
     {
         title: "Работа с библиотеками GPN",
@@ -38,6 +38,6 @@ export const Themes: Theme[] = [
         description: "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
         completedCount: 0,
         totalCount: 255,
-        status: false,
+        status: "begin",
     },
 ];

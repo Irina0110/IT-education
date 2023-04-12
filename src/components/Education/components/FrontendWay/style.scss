@@ -5,4 +5,11 @@
   border-radius: 8px;
   background: $bgStripe;
   padding: 32px;
+
+  .slider{
+    display: flex;
+  }
+  .slick-list{
+    display: flex;
+  }
 }

@@ -1,0 +1,20 @@
+
+.slick-track {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-prev {
+  right: 35px;
+  left: auto;
+}
+
+.slick-next, .slick-prev {
+  top: -20%;
+  width: 30px;
+  height: 30px;
+}
