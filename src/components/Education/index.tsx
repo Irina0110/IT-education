@@ -2,8 +2,10 @@ import React from "react";
 import './style.scss';
 import Recommendation from "./components/Recommendation";
 import IconDown from '../../static/icons/IconDown.svg';
+import FrontendWay from "./components/FrontendWay";
 
 const Education = () => {
+
     return (
         <React.Fragment>
             <div className='education'>
@@ -16,6 +18,8 @@ const Education = () => {
                             </button>
                         </h4>
                     </div>
+                    <FrontendWay/>
+
                 </div>
             </div>
         </React.Fragment>

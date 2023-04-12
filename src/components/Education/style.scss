@@ -6,6 +6,12 @@
   &__content {
     margin: 0 auto;
     width: 80%;
+    padding-top: 48px;
+  }
+  .content__title {
+    color: $typoPrimary;
+    line-height: 36px;
+    padding-bottom: 24px;
   }
   &__show-more{
 

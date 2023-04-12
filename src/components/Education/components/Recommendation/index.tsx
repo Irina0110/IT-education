@@ -5,7 +5,7 @@ import ProgressBar from "../ProgressBar";
 const Recommendation = () => {
     return (
         <div className='recommendation'>
-            <h2 className='recommendation__title font2XL'>Рекомендуемые темы</h2>
+            <h2 className='content__title font2XL'>Рекомендуемые темы</h2>
             <div className='recommendation__card'>
                 <ProgressBar progress={8} totalTasks={10}/>
                 <div className='card__info'>
