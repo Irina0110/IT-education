@@ -9,9 +9,10 @@ import LeftArrowIcon  from "../../../../static/icons/arrowLeft.svg";
 import RightArrowIcon  from "../../../../static/icons/arrowRight.svg";
 interface SliderProps {
     themes: Theme[];
+    filter?: boolean;
 }
 
-function SliderComponent({ themes }: SliderProps) {
+function SliderComponent({ themes, filter }: SliderProps) {
     const settings = {
         dots: false,
         infinite: true,
@@ -129,10 +130,12 @@ function SliderComponent({ themes }: SliderProps) {
             },
         ],
     };
-
+    const filteredThemes = filter
+        ? themes.filter((theme) => theme.status != "done")
+        : themes;
     return (
         <Slider {...settings}>
-            {themes.map((theme) => (
+            {filteredThemes.map((theme) => (
                 <div key={theme.title}>
                     <ThemeCard theme={theme} />
                 </div>
