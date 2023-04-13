@@ -2,28 +2,27 @@
 
 .progress-bar {
   display: block;
-  min-width: 160px;
-  margin-top: 10px;
+
+  &_big {
+    min-width: 160px !important;
+    margin-top: 10px;
+  }
+
+  &_small {
+    max-width: 24px !important;
+  }
 }
 
-.progress-bar-bg {
-  fill: none;
-  stroke: $bgGhost;
-}
-
-.progress-bar-fg {
-  fill: none;
-  stroke: $bgSuccess;
-  stroke-linecap: butt;
-  transform: rotate(-90deg);
-  transform-origin: center;
-  transition: stroke-dashoffset 0.5s ease-in-out;
-}
 
 .progress-bar-text {
-  fill: $typoPrimary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $typoPrimary;
+  margin-top: -20%;
+
 }
 
 .progress-bar-secondary-text {
-  fill: $typoSecondary;
+  color: $typoSecondary;
 }
