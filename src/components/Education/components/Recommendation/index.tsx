@@ -7,7 +7,7 @@ const Recommendation = () => {
         <div className='recommendation'>
             <h2 className='content__title font2XL'>Рекомендуемые темы</h2>
             <div className='recommendation__card'>
-                <ProgressBar progress={8} totalTasks={10}/>
+                <ProgressBar progress={8} totalTasks={10} rate={true}/>
                 <div className='card__info'>
                     <h3 className='title font3XL'>Начало работы</h3>
                     <ul className='fontS'>
