@@ -20,7 +20,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
     return (
         <CircularProgressbarWithChildren styles={{
             // Customize the root svg element
-            root: {},
+            root: {
+                maxWidth: '160px',
+            },
             // Customize the path, i.e. the "completed progress"
             path: {
                 stroke: '#24c38e',

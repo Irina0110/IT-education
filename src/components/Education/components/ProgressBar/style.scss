@@ -1,5 +1,31 @@
 @import "../../../../utils/variables";
 
+@media screen and (max-width: 1200px){
+  .progress-bar-text{
+    margin-top: -30% !important;
+  }
+}
+
+@media screen and (max-width: 676px){
+  .progress-bar-text{
+    margin-top: -45% !important;
+  }
+}
+@media screen and (max-width: 604px){
+  .progress-bar-text{
+    margin-top: -45% !important;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .progress-bar{
+    margin: 0 auto;
+  }
+  .progress-bar-text{
+    margin-top: 120% !important;
+  }
+}
+
 .progress-bar {
   display: block;
 

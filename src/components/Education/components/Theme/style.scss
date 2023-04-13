@@ -1,5 +1,21 @@
 @import "../../../../utils/variables";
 
+@media screen and (max-width: 576px){
+  .theme__card{
+    min-height: 373px;
+  }
+  .card{
+    &__status{
+      flex-direction: column;
+    }
+  }
+  .button{
+    &_begin, &_done, &_progress{
+      margin-bottom: 10px;
+    }
+  }
+}
+
 .theme__card {
   box-shadow: 0 2px 2px rgba(0, 32, 51, 0.02), 0 2px 8px rgba(0, 32, 51, 0.16);
   border-radius: 8px;
@@ -47,7 +63,7 @@
       border-radius: 4px;
       padding: 0 20px;
     }
-    &__progress{
+    &_progress{
       display: flex;
       align-items: center;
 

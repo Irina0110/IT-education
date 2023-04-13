@@ -45,7 +45,7 @@ function ThemeCard({theme, key}: ThemeCardProps) {
                     <div className='button_begin fontButton'>
                         <p>Продолжить тему</p>
                     </div>
-                    <p className='fontS button__progress'>
+                    <p className='fontS button_progress'>
                         {theme.completedCount}/{theme.totalCount}
                         <span>
                             &#160;заданий

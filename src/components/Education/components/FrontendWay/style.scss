@@ -1,15 +1,43 @@
 @import "../../../../utils/variables";
 
+@media screen and (max-width: 768px){
+  .frontend-way{
+    .content__title{
+      flex-direction: column;
+    }
+  }
+  .button_hide{
+    margin-left: 0 !important;
+  }
+}
+
 .frontend-way{
   margin-top: 40px;
   border-radius: 8px;
   background: $bgStripe;
   padding: 32px;
 
+  .content__title{
+    display: flex;
+  }
+
   .slider{
     display: flex;
   }
   .slick-list{
     display: flex;
+  }
+  .button_hide{
+    height: 32px;
+    margin-left: 32px;
+    padding: 0 16px;
+    border-radius: 4px;
+    background: $controlGhost-bg;
+    border: none;
+    color: $controlGhost-typo;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 32px;
+    max-width: max-content;
   }
 }
