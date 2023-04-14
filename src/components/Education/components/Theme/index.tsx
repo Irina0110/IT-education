@@ -3,16 +3,17 @@ import './style.scss';
 import AgainButton from '../../../../static/icons/AgainButton.svg';
 import IconSuccess from '../../../../static/icons/IconSuccess.svg';
 import ProgressBar from "../ProgressBar";
+
 interface ThemeCardProps {
     theme: Theme;
-    key?: number;
+    id?: number;
 }
 
-function ThemeCard({theme, key}: ThemeCardProps) {
+function ThemeCard({theme, id}: ThemeCardProps) {
     const categories = theme.category.split(", ");
 
     return (
-        <div className='theme__card' key={key}>
+        <div className='theme__card' key={id}>
             <h4 className='font2XL'>{theme.title}</h4>
             <ul className='fontS'>
                 {categories.map((category) => (

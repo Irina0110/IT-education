@@ -1,33 +1,36 @@
 @import "../../../../utils/variables";
 
-@media screen and (max-width: 768px){
-  .frontend-way{
-    .content__title{
+@media screen and (max-width: 768px) {
+  .frontend-way {
+    .content__title {
       flex-direction: column;
     }
   }
-  .button_hide{
+  .button_hide {
     margin-left: 0 !important;
   }
 }
 
-.frontend-way{
+.frontend-way {
   margin-top: 40px;
   border-radius: 8px;
   background: $bgStripe;
   padding: 32px;
+  margin-bottom: 48px;
 
-  .content__title{
+  .content__title {
     display: flex;
   }
 
-  .slider{
+  .slider {
     display: flex;
   }
-  .slick-list{
+
+  .slick-list {
     display: flex;
   }
-  .button_hide{
+
+  .button_hide {
     height: 32px;
     margin-left: 32px;
     padding: 0 16px;

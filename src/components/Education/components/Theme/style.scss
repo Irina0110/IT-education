@@ -1,16 +1,16 @@
 @import "../../../../utils/variables";
 
-@media screen and (max-width: 576px){
-  .theme__card{
+@media screen and (max-width: 576px) {
+  .theme__card {
     min-height: 373px;
   }
-  .card{
-    &__status{
+  .card {
+    &__status {
       flex-direction: column;
     }
   }
-  .button{
-    &_begin, &_done, &_progress{
+  .button {
+    &_begin, &_done, &_progress {
       margin-bottom: 10px;
     }
   }
@@ -33,6 +33,7 @@
       list-style-type: none;
     }
   }
+
   .card {
     &__description {
       margin-bottom: 38px;
@@ -42,12 +43,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      span{
+
+      span {
         color: $typoSecondary;
       }
 
     }
   }
+
   .button {
     &_done {
       display: flex;
@@ -57,17 +60,19 @@
       border: 1px solid $controlSecondary-bgBorder;
       padding: 0 20px 0 16px;
     }
-    &_begin{
+
+    &_begin {
       background: $controlPrimary-bg;
       color: $controlPrimary-typo;
       border-radius: 4px;
       padding: 0 20px;
     }
-    &_progress{
+
+    &_progress {
       display: flex;
       align-items: center;
 
-      span{
+      span {
         margin-right: 7px;
       }
     }
