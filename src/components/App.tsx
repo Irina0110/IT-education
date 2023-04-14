@@ -1,6 +1,7 @@
 import './App.scss'
 import Header from "./Header";
 import AppRouter from "../router/AppRouter";
+import Footer from "./Footer";
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
         <div className="App">
             <Header/>
             <AppRouter/>
+            <Footer/>
         </div>
     )
 }

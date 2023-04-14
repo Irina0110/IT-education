@@ -1,0 +1,14 @@
+@import "../../utils/variables.scss";
+
+.footer{
+  padding: 18px 24px;
+  background: $typoSecondary;
+  &__text{
+    &-main{
+      color: $bgDefault;
+    }
+    &-secondary{
+      color: $bgSecondary;
+    }
+  }
+}
