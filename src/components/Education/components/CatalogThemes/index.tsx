@@ -32,32 +32,32 @@ const CatalogThemes = () => {
     return (
         <div className='catalog'>
             <div className='content__title font2XL'>Каталог тем</div>
-            <ul className='catalog__filter'>
-                <li className={`filter__button ${filter === 'all' ? 'filter_active' : ''}`}
+            <div className='catalog__filter'>
+                <button className={`filter__button ${filter === 'all' ? 'filter_active' : ''}`}
                     onClick={() => handleFilter('all')}>
                     Все
-                </li>
+                </button>
                 <hr/>
-                <li className={`filter__button ${filter === 'workspace' ? 'filter_active' : ''}`}
+                <button className={`filter__button ${filter === 'workspace' ? 'filter_active' : ''}`}
                     onClick={() => handleFilter('workspace')}>
                     Рабочая среда
-                </li>
+                </button>
                 <hr/>
-                <li className={`filter__button ${filter === 'libraries' ? 'filter_active' : ''}`}
+                <button className={`filter__button ${filter === 'libraries' ? 'filter_active' : ''}`}
                     onClick={() => handleFilter('libraries')}>
                     Библиотеки
-                </li>
+                </button>
                 <hr/>
-                <li className={`filter__button ${filter === 'done' ? 'filter_active' : ''}`}
+                <button className={`filter__button ${filter === 'done' ? 'filter_active' : ''}`}
                     onClick={() => handleFilter('done')}>
                     Пройденные
-                </li>
+                </button>
                 <hr/>
-                <li className={`filter__button ${filter === 'undone' ? 'filter_active' : ''}`}
+                <button className={`filter__button ${filter === 'undone' ? 'filter_active' : ''}`}
                     onClick={() => handleFilter('undone')}>
                     Не пройденные
-                </li>
-            </ul>
+                </button>
+            </div>
             <div className='catalog__cards'>
                 {filteredThemes.map((theme) => (
                     <ThemeCard theme={theme} key={theme.id}/>

@@ -25,6 +25,34 @@
     margin-top: 120% !important;
   }
 }
+@media screen and (max-width: 550px){
+  .progress-bar-text{
+    margin-top: 110% !important;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .progress-bar-text{
+    margin-top: 100% !important;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .progress-bar-text{
+    margin-top: 90% !important;
+  }
+}
+@media screen and (max-width: 420px){
+  .progress-bar-text{
+    margin-top: 75% !important;
+  }
+}
+
+@media screen and (max-width: 380px){
+  .progress-bar-text{
+    margin-top: 70% !important;
+  }
+}
 
 .progress-bar {
   display: block;

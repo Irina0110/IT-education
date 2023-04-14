@@ -1,5 +1,48 @@
 @import "../../utils/variables.scss";
 
+@media screen and (max-width: 778px) {
+  .header {
+    padding: 18px 9px !important;
+    &__nav{
+      &-logo{
+        margin-right: 15px !important;
+      }
+      &-link{
+        margin-right: 15px !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 693px){
+  .header {
+    &__nav{
+      &-logo{
+        width: min-content !important;
+      }
+    }
+    &__panel{
+      &-icons{
+        display: none !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 576px){
+  .header{
+    margin: 0 5px;
+    &__panel{
+      &-user{
+        p{
+          display: none !important;
+        }
+        img{
+          margin: 0!important;
+        }
+      }
+    }
+  }
+}
+
 .header {
   padding: 18px 24px;
   max-height: 60px;
@@ -15,7 +58,6 @@
     padding-top: 22px;
 
     &-logo {
-
       font-weight: 700;
       font-size: 18px;
       margin-right: 36px;

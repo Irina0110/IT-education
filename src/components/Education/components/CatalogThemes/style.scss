@@ -1,6 +1,35 @@
 @import "../../../../utils/variables";
 
+@media screen and (max-width: 686px){
+  button:first-child{
+    padding-left: 10px !important;
+  }
+  .filter__button{
+    padding: 9.5px 10px !important;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .catalog{
+    &__filter{
+      width: 100% !important;
+      gap: 5px !important;
+      justify-content: center !important;
+      flex-wrap: wrap;
+      border: none !important;
+      hr{
+        display: none;
+      }
+    }
+    .filter__button{
+      border: 1px solid $controlDefault-bgBorder !important;
+      border-radius: 4px;
+    }
+  }
+}
+
 .catalog {
+  padding-bottom: 90px;
   .content__title {
     padding-bottom: 16px;
   }
@@ -24,7 +53,7 @@
       border-left: 1px solid $controlDefault-bgBorder;
     }
 
-    li:first-child {
+    button:first-child {
       padding-left: 20px;
     }
 
@@ -33,6 +62,7 @@
   .filter__button {
     padding: 9.5px 18px;
     list-style-type: none;
+    border: none;
   }
 
   &__cards {
