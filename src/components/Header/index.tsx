@@ -13,7 +13,7 @@ const Header = () => {
                 <nav className='header__nav'>
                     <h1 className='header__nav-logo'>Портал разработчика</h1>
                     <NavLink to='/' className='header__nav-link'>Moe обучение</NavLink>
-                    <NavLink to='/tasks' className='header__nav-link'>Задачи</NavLink>
+                    <NavLink to='/branches' className='header__nav-link'>Задачи</NavLink>
                 </nav>
                 <div className='header__panel'>
                     <div className='header__panel-icons'>
