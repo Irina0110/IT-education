@@ -1,0 +1,54 @@
+@import "../../../../utils/variables";
+
+.search{
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 48px;
+  min-height: 84vh;
+  &__title{
+    padding-bottom: 24px;
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    gap: 10px;
+  }
+  .info{
+    display: flex;
+    flex-direction: column;
+    &__block{
+      :first-child{
+        margin-bottom: 5px;
+      }
+      display: flex;
+      flex-direction: column;
+      color: $typoSecondary;
+      a{
+        box-shadow: 0 2px 2px rgba(0, 32, 51, 0.02), 0 2px 8px rgba(0, 32, 51, 0.16);
+        border-radius: 8px;
+        padding: 15px;
+        text-decoration: none;
+        margin-bottom: 5px;
+      }
+      a:hover{
+        background: $controlGhost-bg;
+      }
+    }
+    &__result{
+      color: $typoPrimary;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__button {
+    background: #0078D2;
+    border-radius: 4px;
+    border: none;
+    color: $controlPrimary-typo;
+    height: 40px;
+    width: 80%;
+    margin: 0 auto;
+  }
+}

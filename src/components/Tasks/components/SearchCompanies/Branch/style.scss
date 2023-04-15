@@ -1,0 +1,25 @@
+@import "../../../../../utils/variables";
+
+.branch{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 48px;
+  min-height: 84vh;
+  gap: 10px;
+  &__info{
+    display: flex;
+    flex-direction: column;
+    :first-child{
+      margin-bottom: 5px;
+      color: $typoSecondary;
+    }
+  }
+  .info{
+    &__result{
+      color: $typoPrimary;
+      margin-bottom: 5px;
+    }
+  }
+}
