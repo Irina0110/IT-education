@@ -7,7 +7,7 @@ import FrontendWay from "./components/FrontendWay";
 import CatalogThemes from "./components/CatalogThemes";
 
 const Education = () => {
-    const [showButton, setStateButton] = useState(false);
+    const [showButton, setStateButton] = useState(true);
 
     const handleSetState = () => {
         const hiddenContent = document.getElementById('hiddenContent');

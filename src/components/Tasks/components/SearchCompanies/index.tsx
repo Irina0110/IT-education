@@ -12,6 +12,7 @@ interface Branch {
         hid: string;
     };
 }
+
 interface BranchesData {
     suggestions: Branch[];
 }
@@ -33,8 +34,8 @@ interface ValueData {
         registration_date: number;
         liquidation_date: number;
     };
-    address:{
-        data:{
+    address: {
+        data: {
             source: string;
         }
     }
@@ -47,22 +48,22 @@ interface Value {
     // другие свойства
 }
 
+export const dataFormat = (data: string) => {
+    const date = new Date(data);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear().toString();
+    return `${day}/${month}/${year}`;
+}
 const SearchCompanies = () => {
     const [value, setValue] = useState<Value>();
     console.log(value)
-    const [branches, setBranches] = useState<BranchesData>({ suggestions: [] });
+    const [branches, setBranches] = useState<BranchesData>({suggestions: []});
 
-    const dataFormat = (data: string) => {
-        const date = new Date(data);
-        const day = date.getDate().toString().padStart(2, '0');
-        const month = (date.getMonth() + 1).toString().padStart(2, '0');
-        const year = date.getFullYear().toString();
-        return `${day}/${month}/${year}`;
-    }
 
     useEffect(() => {
         if (value?.data?.type === 'LEGAL') {
-            setBranches({ suggestions: [] });
+            setBranches({suggestions: []});
         }
     }, [value])
 
@@ -86,7 +87,7 @@ const SearchCompanies = () => {
             //console.log(data)
             //setBranches(data.suggestions);
             console.log(branches);
-            setBranches({ suggestions: data.suggestions });
+            setBranches({suggestions: data.suggestions});
         } catch (error) {
             console.error(error);
         }
@@ -96,7 +97,7 @@ const SearchCompanies = () => {
     console.log(value)
     return (<div className='search'>
             <div className='search__title font2XL'>Частичный поиск организации</div>
-            <PartySuggestions token="8958872a89ed33718f1af6923c159609cc7240fc" value={value} onChange={setValue} />
+            <PartySuggestions token="8958872a89ed33718f1af6923c159609cc7240fc" value={value} onChange={setValue}/>
             {value && (
                 <div className='search__info'>
                     <div className='info__block'>
@@ -135,7 +136,7 @@ const SearchCompanies = () => {
                     {value?.data?.state.status === "LIQUIDATED" ?
                         <div className='info__block'>
                             <span>Дата ликвидации </span>
-                               <span className='info__result'> {dataFormat(value?.data?.state.liquidation_date)}</span>
+                            <span className='info__result'> {dataFormat(value?.data?.state.liquidation_date)}</span>
                         </div> : ''
                     }
                     {value?.data?.management && (
@@ -144,17 +145,19 @@ const SearchCompanies = () => {
                             <span className='info__result'>{value?.data?.management.name}</span>
                         </div>
                     )}
-                    {value?.data?.branch_count > 0 && value?.data?.type === 'LEGAL' &&  (
-                        <button className='search__button fontS' onClick={() => fetchBranchData(value.data.inn)}>Показать филиалы</button>
+                    {value?.data?.branch_count > 0 && value?.data?.type === 'LEGAL' && (
+                        <button className='search__button fontS'
+                                onClick={() => fetchBranchData(value.data.inn)}>Показать филиалы</button>
                     )}
-                    {branches.suggestions.length === 0 && value?.data?.branch_count === 0 && value.data.type === 'LEGAL' &&  (
+                    {branches.suggestions.length === 0 && value?.data?.branch_count === 0 && value.data.type === 'LEGAL' && (
                         <div className='info__block'>Филиалы не найдены</div>
                     )}
                     {branches.suggestions.length > 0 && value?.data?.branch_count > 0 && value?.data?.type === 'LEGAL' && (
                         <div className='info__block'>
                             <span>Филиалы</span>{
                             branches.suggestions.map((branch: Branch, index) => (
-                                <Link to={`/branches/${branch.data.hid}`} key={index} state={{branches, index}}>{branch.data.name.full_with_opf}</Link>
+                                <Link to={`/branches/${branch.data.hid}`} key={index}
+                                      state={{branches, index}}>{branch.data.name.full_with_opf}</Link>
                             ))}
                         </div>
                     )}

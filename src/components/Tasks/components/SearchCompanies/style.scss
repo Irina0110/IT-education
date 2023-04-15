@@ -1,42 +1,49 @@
 @import "../../../../utils/variables";
 
-.search{
+.search {
   margin: 0 auto;
   width: 80%;
   padding-top: 48px;
   min-height: 84vh;
-  &__title{
+
+  &__title {
     padding-bottom: 24px;
   }
 
-  &__info{
+  &__info {
     display: flex;
     flex-direction: column;
     padding-top: 24px;
     gap: 10px;
   }
-  .info{
+
+  .info {
     display: flex;
     flex-direction: column;
-    &__block{
-      :first-child{
+
+    &__block {
+      :first-child {
         margin-bottom: 5px;
       }
+
       display: flex;
       flex-direction: column;
       color: $typoSecondary;
-      a{
+
+      a {
         box-shadow: 0 2px 2px rgba(0, 32, 51, 0.02), 0 2px 8px rgba(0, 32, 51, 0.16);
         border-radius: 8px;
         padding: 15px;
         text-decoration: none;
         margin-bottom: 5px;
       }
-      a:hover{
+
+      a:hover {
         background: $controlGhost-bg;
       }
     }
-    &__result{
+
+    &__result {
       color: $typoPrimary;
       margin-bottom: 5px;
     }

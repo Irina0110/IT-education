@@ -1,35 +1,37 @@
 @import "../../../../utils/variables";
 
-@media screen and (max-width: 1200px){
-  .recommendation{
-    .card__info{
+@media screen and (max-width: 1200px) {
+  .recommendation {
+    .card__info {
       margin-left: 70px !important;
     }
   }
 }
 
-@media screen and (max-width: 992px){
-  .recommendation{
-    &__card{
+@media screen and (max-width: 992px) {
+  .recommendation {
+    &__card {
       padding: 32px !important;
     }
-    .card__info{
+
+    .card__info {
       margin-left: 50px !important;
     }
   }
 }
 
-@media screen and (max-width: 768px){
-  .recommendation{
-    .card__info{
+@media screen and (max-width: 768px) {
+  .recommendation {
+    .card__info {
       margin-left: 30px !important;
 
     }
   }
 }
-@media screen and (max-width: 600px){
-  .recommendation{
-    &__card{
+
+@media screen and (max-width: 600px) {
+  .recommendation {
+    &__card {
       flex-direction: column;
       align-content: center !important;
     }

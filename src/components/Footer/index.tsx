@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { useGeolocated } from "react-geolocated";
+import {useGeolocated} from "react-geolocated";
 import './style.scss';
 
 const Footer: React.FC = () => {
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
 
     useEffect(() => {
         if (coords) {
-            const { latitude, longitude } = coords;
+            const {latitude, longitude} = coords;
             axios
                 .post(
                     "https://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address",

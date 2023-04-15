@@ -5,7 +5,6 @@ import Education from "../components/Education";
 import Tasks from "../components/Tasks";
 import Branch from "../components/Tasks/components/SearchCompanies/Branch";
 
-
 const AppRouter = () => {
     return (
         <Routes>

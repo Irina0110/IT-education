@@ -1,27 +1,22 @@
 import React from "react";
 import './style.scss';
 import {useLocation} from 'react-router-dom';
+import {dataFormat} from "../index";
 
-const Branch = () =>{
+const Branch = () => {
     const location = useLocation();
     const data = location.state?.branches?.suggestions;
     const index = location.state?.index;
-    const dataFormat = (data: string) => {
-        const date = new Date(data);
-        const day = date.getDate().toString().padStart(2, '0');
-        const month = (date.getMonth() + 1).toString().padStart(2, '0');
-        const year = date.getFullYear().toString();
-        return `${day}/${month}/${year}`;
-    }
+
     if (!data || !data.length) {
         return <div className='branch font2XL'>Данные не доступны. Пожалуйста, повторите запрос!</div>;
     }
 
     return <div className='branch'>
-       <div className='branch__info'>
-           <span>Название</span>
-           <span className='info__result'>{data[index]?.data.name?.full_with_opf}</span>
-       </div>
+        <div className='branch__info'>
+            <span>Название</span>
+            <span className='info__result'>{data[index]?.data.name?.full_with_opf}</span>
+        </div>
 
         <div className='branch__info'>
             <span>ИНН</span>

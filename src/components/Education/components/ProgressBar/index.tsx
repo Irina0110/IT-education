@@ -19,30 +19,21 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 
     return (
         <CircularProgressbarWithChildren styles={{
-            // Customize the root svg element
             root: {
                 maxWidth: '160px',
             },
-            // Customize the path, i.e. the "completed progress"
             path: {
                 stroke: '#24c38e',
                 strokeLinecap: 'butt',
             },
-            // Customize the circle behind the path, i.e. the "total progress"
             trail: {
-                // Trail color
                 stroke: 'rgba(0, 32, 51, 0.08)',
-                // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
                 strokeLinecap: 'butt',
-                // Rotate the trail
                 transform: 'rotate(0.25turn)',
                 transformOrigin: 'center center',
             },
-            // Customize the text
             text: {
-                // Text color
                 fill: '#002033',
-                // Text size
                 fontSize: '16px',
             },
 

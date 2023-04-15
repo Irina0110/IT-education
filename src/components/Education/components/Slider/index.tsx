@@ -2,17 +2,18 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Theme } from "../../../../api/themes";
+import {Theme} from "../../../../api/themes";
 import ThemeCard from "../Theme";
 import './style.scss';
-import LeftArrowIcon  from "../../../../static/icons/arrowLeft.svg";
-import RightArrowIcon  from "../../../../static/icons/arrowRight.svg";
+import LeftArrowIcon from "../../../../static/icons/arrowLeft.svg";
+import RightArrowIcon from "../../../../static/icons/arrowRight.svg";
+
 interface SliderProps {
     themes: Theme[];
     filter?: boolean;
 }
 
-function SliderComponent({ themes, filter }: SliderProps) {
+function SliderComponent({themes, filter}: SliderProps) {
     const settings = {
         dots: false,
         infinite: true,
@@ -20,10 +21,12 @@ function SliderComponent({ themes, filter }: SliderProps) {
         slidesToShow: 3,
         slidesToScroll: 1,
         nextArrow: (
-            <img src={RightArrowIcon} className="slick-next" onClick={() => {}} alt='next card' />
+            <img src={RightArrowIcon} className="slick-next" onClick={() => {
+            }} alt='next card'/>
         ),
         prevArrow: (
-            <img src={LeftArrowIcon} className="slick-prev" onClick={() => {}} alt='prev card' />
+            <img src={LeftArrowIcon} className="slick-prev" onClick={() => {
+            }} alt='prev card'/>
         ),
         responsive: [
             {
@@ -137,7 +140,7 @@ function SliderComponent({ themes, filter }: SliderProps) {
         <Slider {...settings}>
             {filteredThemes.map((theme) => (
                 <div key={theme.title}>
-                    <ThemeCard theme={theme} />
+                    <ThemeCard theme={theme}/>
                 </div>
             ))}
         </Slider>
