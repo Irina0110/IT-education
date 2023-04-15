@@ -34,27 +34,27 @@ const CatalogThemes = () => {
             <div className='content__title font2XL'>Каталог тем</div>
             <div className='catalog__filter'>
                 <button className={`filter__button ${filter === 'all' ? 'filter_active' : ''}`}
-                    onClick={() => handleFilter('all')}>
+                        onClick={() => handleFilter('all')}>
                     Все
                 </button>
                 <hr/>
                 <button className={`filter__button ${filter === 'workspace' ? 'filter_active' : ''}`}
-                    onClick={() => handleFilter('workspace')}>
+                        onClick={() => handleFilter('workspace')}>
                     Рабочая среда
                 </button>
                 <hr/>
                 <button className={`filter__button ${filter === 'libraries' ? 'filter_active' : ''}`}
-                    onClick={() => handleFilter('libraries')}>
+                        onClick={() => handleFilter('libraries')}>
                     Библиотеки
                 </button>
                 <hr/>
                 <button className={`filter__button ${filter === 'done' ? 'filter_active' : ''}`}
-                    onClick={() => handleFilter('done')}>
+                        onClick={() => handleFilter('done')}>
                     Пройденные
                 </button>
                 <hr/>
                 <button className={`filter__button ${filter === 'undone' ? 'filter_active' : ''}`}
-                    onClick={() => handleFilter('undone')}>
+                        onClick={() => handleFilter('undone')}>
                     Не пройденные
                 </button>
             </div>
