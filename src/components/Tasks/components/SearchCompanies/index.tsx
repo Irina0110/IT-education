@@ -4,6 +4,8 @@ import {useEffect, useState} from "react";
 import './style.scss'
 import {Link} from "react-router-dom";
 
+const Token = '8958872a89ed33718f1af6923c159609cc7240fc';
+
 interface Branch {
     data: {
         name: {
@@ -75,7 +77,7 @@ const SearchCompanies = () => {
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
-                    "Authorization": "Token 8958872a89ed33718f1af6923c159609cc7240fc",
+                    "Authorization": `Token ` + `${Token}`,
                 },
                 body: JSON.stringify({
                     "query": `${inn}`,
@@ -97,7 +99,7 @@ const SearchCompanies = () => {
     console.log(value)
     return (<div className='search'>
             <div className='search__title font2XL'>Частичный поиск организации</div>
-            <PartySuggestions token="8958872a89ed33718f1af6923c159609cc7240fc" value={value} onChange={setValue}/>
+            <PartySuggestions token={`${Token}`} value={value} onChange={setValue}/>
             {value && (
                 <div className='search__info'>
                     <div className='info__block'>
