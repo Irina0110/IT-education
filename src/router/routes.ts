@@ -1,5 +1,5 @@
 export const routes = {
-    education: '/',
-    tasks: '/branches',
-    branch:'/branches/:id'
+    education: '/IT_Education/',
+    tasks: '/IT_Education/branches',
+    branch:'/IT_Education/branches/:id'
 };
