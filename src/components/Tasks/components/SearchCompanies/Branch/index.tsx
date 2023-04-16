@@ -15,7 +15,7 @@ const Branch = () => {
     return <div className='branch'>
         <div className='branch__info'>
             <span>Название</span>
-            <span className='info__result'>{data[index]?.data.name?.full_with_opf}</span>
+            <span className='info__result'>{data[index]?.data.name.full_with_opf}</span>
         </div>
 
         <div className='branch__info'>
@@ -34,15 +34,18 @@ const Branch = () => {
             </span>
         </div>
 
-        <div className='branch__info'>
-            <span>Дата основания</span>
-            <span className='info__result'>{dataFormat(data[index]?.data.state.registration_date)}</span>
-        </div>
+        { data[index].data.state.registration_date && (
+            <div className='branch__info'>
+                <span>Дата основания</span>
+                <span className='info__result'>{dataFormat(data[index].data.state.registration_date)}</span>
+            </div>
+        )
+        }
 
         {data[index]?.data?.state.status === "LIQUIDATED" ?
             <div className='branch__info'>
                 <span>Дата ликвидации</span>
-                <span className='info__result'> {dataFormat(data[index]?.data?.state.liquidation_date)}</span>
+                <span className='info__result'> {dataFormat(data[index].data.state.liquidation_date)}</span>
             </div> : ''
         }
 

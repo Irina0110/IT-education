@@ -1,4 +1,4 @@
-import {PartySuggestions} from 'react-dadata';
+import {DaDataParty, DaDataSuggestion, PartySuggestions} from 'react-dadata';
 import 'react-dadata/dist/react-dadata.css';
 import {useEffect, useState} from "react";
 import './style.scss'
@@ -42,23 +42,24 @@ interface ValueData {
         }
     }
 
-    // другие свойства
 }
+type Nullable<T> = T | null | undefined;
 
-interface Value {
-    data?: ValueData;
-    // другие свойства
-}
-
-export const dataFormat = (data: string) => {
-    const date = new Date(data);
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear().toString();
-    return `${day}/${month}/${year}`;
+export const dataFormat = (data: Nullable<number> | undefined) => {
+    if (data === null) {
+        return null
+    } else if (data === undefined) {
+        return undefined
+    } else {
+        const date = new Date(data);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear().toString();
+        return `${day}/${month}/${year}`;
+    }
 }
 const SearchCompanies = () => {
-    const [value, setValue] = useState<Value>();
+    const [value, setValue] = useState<DaDataSuggestion<DaDataParty> | undefined>(undefined);
     console.log(value)
     const [branches, setBranches] = useState<BranchesData>({suggestions: []});
 
@@ -70,28 +71,30 @@ const SearchCompanies = () => {
     }, [value])
 
     const fetchBranchData = async (inn: string) => {
-        try {
-            const response = await fetch("https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party", {
-                method: "POST",
-                mode: "cors",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                    "Authorization": `Token ` + `${Token}`,
-                },
-                body: JSON.stringify({
-                    "query": `${inn}`,
-                    "branch_type": "BRANCH",
-                    "count": '100'
-                })
-            });
-            const data = await response.json();
-            //console.log(data)
-            //setBranches(data.suggestions);
-            console.log(branches);
-            setBranches({suggestions: data.suggestions});
-        } catch (error) {
-            console.error(error);
+        if (inn) {
+            try {
+                const response = await fetch("https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party", {
+                    method: "POST",
+                    mode: "cors",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "Authorization": `Token ` + `${Token}`,
+                    },
+                    body: JSON.stringify({
+                        "query": `${inn}`,
+                        "branch_type": "BRANCH",
+                        "count": '100'
+                    })
+                });
+                const data = await response.json();
+                //console.log(data)
+                //setBranches(data.suggestions);
+                console.log(branches);
+                setBranches({suggestions: data.suggestions});
+            } catch (error) {
+                console.error(error);
+            }
         }
     };
 
@@ -99,7 +102,7 @@ const SearchCompanies = () => {
     console.log(value)
     return (<div className='search'>
             <div className='search__title font2XL'>Частичный поиск организации</div>
-            <PartySuggestions token={`${Token}`} value={value} onChange={setValue}/>
+            <PartySuggestions token={`${Token}`} value={value} onChange={(value?: DaDataSuggestion<DaDataParty>) => setValue(value)}/>
             {value && (
                 <div className='search__info'>
                     <div className='info__block'>
@@ -130,10 +133,13 @@ const SearchCompanies = () => {
                         </span>
                     </div>
 
-                    <div className='info__block'>
-                        <span>Дата основания </span>
-                        <span className='info__result'>{dataFormat(value?.data?.state.registration_date)}</span>
-                    </div>
+                    {value?.data?.state.registration_date && (
+                        <div className='info__block'>
+                            <span>Дата основания </span>
+                            <span className='info__result'>{dataFormat(value?.data?.state.registration_date)}</span>
+                        </div>
+                    )}
+
 
                     {value?.data?.state.status === "LIQUIDATED" ?
                         <div className='info__block'>
@@ -147,14 +153,17 @@ const SearchCompanies = () => {
                             <span className='info__result'>{value?.data?.management.name}</span>
                         </div>
                     )}
-                    {value?.data?.branch_count > 0 && value?.data?.type === 'LEGAL' && (
+
+                    {value?.data?.branch_count !== 0 && value?.data?.type === 'LEGAL' && (
                         <button className='search__button fontS'
-                                onClick={() => fetchBranchData(value.data.inn)}>Показать филиалы</button>
+                                onClick={() => fetchBranchData(value?.data?.inn || 'null')}>Показать филиалы</button>
                     )}
+
                     {branches.suggestions.length === 0 && value?.data?.branch_count === 0 && value.data.type === 'LEGAL' && (
                         <div className='info__block'>Филиалы не найдены</div>
                     )}
-                    {branches.suggestions.length > 0 && value?.data?.branch_count > 0 && value?.data?.type === 'LEGAL' && (
+
+                    {branches.suggestions.length > 0 && value?.data?.branch_count !== 0 && value?.data?.type === 'LEGAL' && (
                         <div className='info__block'>
                             <span>Филиалы</span>{
                             branches.suggestions.map((branch: Branch, index) => (
