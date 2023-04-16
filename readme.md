@@ -1,5 +1,7 @@
 # IT education
 
+URL: https://irina0110.github.io/IT_Education/
+
 ---
 
 ## About
