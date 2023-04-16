@@ -26,6 +26,7 @@
         margin-bottom: 5px;
       }
 
+      margin-bottom: 5px;
       display: flex;
       flex-direction: column;
       color: $typoSecondary;
@@ -45,7 +46,6 @@
 
     &__result {
       color: $typoPrimary;
-      margin-bottom: 5px;
     }
   }
 
@@ -56,6 +56,8 @@
     color: $controlPrimary-typo;
     height: 40px;
     width: 80%;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
   }
 }

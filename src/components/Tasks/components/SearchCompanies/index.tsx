@@ -19,30 +19,6 @@ interface BranchesData {
     suggestions: Branch[];
 }
 
-interface ValueData {
-    type: string;
-    inn: string;
-    branch_count: number;
-
-    management: {
-        post: string;
-        name: string;
-    };
-    name: {
-        full_with_opf: string;
-    };
-    state: {
-        status: string;
-        registration_date: number;
-        liquidation_date: number;
-    };
-    address: {
-        data: {
-            source: string;
-        }
-    }
-
-}
 type Nullable<T> = T | null | undefined;
 
 export const dataFormat = (data: Nullable<number> | undefined) => {
