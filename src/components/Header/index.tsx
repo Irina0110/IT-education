@@ -12,8 +12,8 @@ const Header = () => {
             <header className='header'>
                 <nav className='header__nav'>
                     <h1 className='header__nav-logo'>Портал разработчика</h1>
-                    <NavLink to='/' className='header__nav-link'>Moe обучение</NavLink>
-                    <NavLink to='/branches' className='header__nav-link'>Задачи</NavLink>
+                    <NavLink to='/IT_Education/' className='header__nav-link'>Moe обучение</NavLink>
+                    <NavLink to='/IT_Education/branches' className='header__nav-link'>Задачи</NavLink>
                 </nav>
                 <div className='header__panel'>
                     <div className='header__panel-icons'>
