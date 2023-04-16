@@ -167,7 +167,7 @@ const SearchCompanies = () => {
                         <div className='info__block'>
                             <span>Филиалы</span>{
                             branches.suggestions.map((branch: Branch, index) => (
-                                <Link to={`/branches/${branch.data.hid}`} key={index}
+                                <Link to={`IT_Education/branches/${branch.data.hid}`} key={index}
                                       state={{branches, index}}>{branch.data.name.full_with_opf}</Link>
                             ))}
                         </div>
