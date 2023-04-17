@@ -40,7 +40,6 @@ const Footer: React.FC = () => {
                     }
                 )
                 .then((response) => {
-                    console.log(response)
                     const city = response.data.suggestions[0].data.city;
                     setCity(city);
                     setLatitude(latitude);

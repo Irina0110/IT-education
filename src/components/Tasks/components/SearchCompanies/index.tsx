@@ -36,7 +36,6 @@ export const dataFormat = (data: Nullable<number> | undefined) => {
 }
 const SearchCompanies = () => {
     const [value, setValue] = useState<DaDataSuggestion<DaDataParty> | undefined>(undefined);
-    console.log(value)
     const [branches, setBranches] = useState<BranchesData>({suggestions: []});
 
 
@@ -64,9 +63,6 @@ const SearchCompanies = () => {
                     })
                 });
                 const data = await response.json();
-                //console.log(data)
-                //setBranches(data.suggestions);
-                console.log(branches);
                 setBranches({suggestions: data.suggestions});
             } catch (error) {
                 console.error(error);
@@ -74,8 +70,6 @@ const SearchCompanies = () => {
         }
     };
 
-    console.log(branches);
-    console.log(value)
     return (<div className='search'>
             <div className='search__title font2XL'>Частичный поиск организации</div>
             <PartySuggestions token={`${Token}`} value={value} onChange={(value?: DaDataSuggestion<DaDataParty>) => setValue(value)}/>
